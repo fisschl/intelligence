@@ -4,7 +4,6 @@ export const editorStyle = style({
   borderWidth: 2,
   borderStyle: "dashed",
   minHeight: "20rem",
-  marginBottom: "0.8rem",
   padding: "0.6rem 0.8rem",
 });
 

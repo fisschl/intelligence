@@ -69,11 +69,11 @@ const Page: React.FC = () => {
   };
 
   return (
-    <main className="flex gap-5 p-4">
-      <div className="min-w-0 flex-1">
+    <div className="flex gap-3 px-3 pt-1 pb-4">
+      <section className="min-w-0 flex-1">
         <article
           className={cn(
-            "rounded-md transition",
+            "rounded-md transition mb-3",
             "border-gray-200 focus-within:border-blue-500",
             "dark:border-gray-500 dark:focus-within:border-blue-500",
             editorStyle,
@@ -109,16 +109,16 @@ const Page: React.FC = () => {
             开始翻译
           </Button>
         </div>
-      </div>
-      <div className="min-w-0 flex-1">
+      </section>
+      <section className="min-w-0 flex-1">
         <Markdown content={completion} />
         {isLoading ? (
           <p className="my-4">
             <Loader2 size={20} className="animate-spin" />
           </p>
         ) : null}
-      </div>
-    </main>
+      </section>
+    </div>
   );
 };
 
