@@ -2,11 +2,11 @@
 
 import { useChat } from "@ai-sdk/react";
 import { Markdown } from "@/components/markdown";
-import { Input } from "@chakra-ui/react"
+import { Input } from "@/components/ui/input";
 
 const Chat: React.FC = () => {
   const { messages, input, handleInputChange, handleSubmit } = useChat({
-    api: "/api/chat",
+    api: "/chat/api",
   });
 
   return (

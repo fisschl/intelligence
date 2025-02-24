@@ -1,9 +1,9 @@
 import "./base.css";
 import type { Metadata } from "next";
-import { Provider } from "@/components/ui/provider";
 import { Noto_Sans_SC, Open_Sans, Fira_Code } from "next/font/google";
 import clsx from "clsx";
 import "./app.css";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const notoSansSC = Noto_Sans_SC({
   subsets: ["latin"],
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 export default function RootLayout(
   props: Readonly<{
     children: React.ReactNode;
-  }>
+  }>,
 ) {
   const { children } = props;
 
@@ -42,11 +42,18 @@ export default function RootLayout(
       className={clsx(
         openSans.variable,
         notoSansSC.variable,
-        firaCode.variable
+        firaCode.variable,
       )}
     >
       <body>
-        <Provider>{children}</Provider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
