@@ -1,4 +1,4 @@
-import { moonshot } from "@/app/chat/api/moonshot";
+import { moonshot } from "@/app/api/moonshot";
 import { streamText } from "ai";
 
 const TranslatePromptChinese = `

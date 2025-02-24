@@ -1,10 +1,13 @@
 import "./base.css";
-import type { Metadata } from "next";
-import { Noto_Sans_SC, Open_Sans, Fira_Code } from "next/font/google";
-import clsx from "clsx";
-import "./app.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { Toaster } from "@/components/ui/sonner";
+import clsx from "clsx";
+import type { Metadata } from "next";
+import { Fira_Code, Noto_Sans_SC, Open_Sans } from "next/font/google";
 import { PropsWithChildren } from "react";
+import "./app.css";
+import NavigationSidebar from "./navigation";
 
 const notoSansSC = Noto_Sans_SC({
   subsets: ["latin"],
@@ -47,7 +50,16 @@ const RootLayout: React.FC<PropsWithChildren> = ({ children }) => {
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <SidebarProvider>
+            <NavigationSidebar />
+            <main className="flex-1 overflow-auto">
+              <header className="flex px-3 py-2">
+                <SidebarTrigger variant="outline" />
+              </header>
+              {children}
+            </main>
+            <Toaster />
+          </SidebarProvider>
         </ThemeProvider>
       </body>
     </html>
