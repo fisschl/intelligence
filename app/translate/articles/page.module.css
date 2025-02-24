@@ -1,0 +1,18 @@
+.editor {
+  border-width: 2px;
+  border-style: dashed;
+  min-height: 20rem;
+  padding: 0.6rem 0.8rem;
+}
+
+.editorProse {
+  max-width: none;
+}
+
+.editorProse:focus {
+  outline: none;
+}
+
+.languageSelect {
+  width: 8rem;
+}

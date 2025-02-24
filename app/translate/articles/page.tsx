@@ -15,7 +15,7 @@ import {
 import { useCompletion } from "@ai-sdk/react";
 import { Loader2, Send, Trash2 } from "lucide-react";
 import { KeyboardEventHandler, useState } from "react";
-import { editorStyle, editorProseStyle, languageSelectStyle } from "./page.css";
+import pageStyle from "./page.module.css";
 
 const languageOptions = [
   {
@@ -37,7 +37,7 @@ const Page: React.FC = () => {
       attributes: {
         class: cn(
           "prose prose-sm dark:prose-invert prose-code:text-sm max-w-none",
-          editorProseStyle,
+          pageStyle.editorProse,
         ),
       },
     },
@@ -76,7 +76,7 @@ const Page: React.FC = () => {
             "rounded-md transition mb-3",
             "border-gray-200 focus-within:border-blue-500",
             "dark:border-gray-500 dark:focus-within:border-blue-500",
-            editorStyle,
+            pageStyle.editor,
           )}
           onClick={handleClickEditor}
           onKeyDown={handleKeyDown}
@@ -85,7 +85,7 @@ const Page: React.FC = () => {
         </article>
         <div className="mb-3 flex flex-wrap justify-end gap-3">
           <Select value={language} onValueChange={setLanguage}>
-            <SelectTrigger className={languageSelectStyle}>
+            <SelectTrigger className={pageStyle.languageSelect}>
               <SelectValue placeholder="请选择目标语言" />
             </SelectTrigger>
             <SelectContent>

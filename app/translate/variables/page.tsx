@@ -28,9 +28,8 @@ import { Loader2, Send } from "lucide-react";
 import { useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
-
 import { z } from "zod";
-import { codeStyle } from "./page.css";
+import pageStyle from "./page.module.css";
 
 const changeCaseOptions: {
   value: string;
@@ -158,7 +157,7 @@ const Page: React.FC = () => {
               key={word}
               variant="secondary"
               onClick={() => handleCopy(word)}
-              className={codeStyle}
+              className={pageStyle.codeFont}
             >
               {word}
             </Button>
@@ -174,7 +173,7 @@ const Page: React.FC = () => {
           {changeCaseOptions.map((option) => (
             <div className="flex items-center space-x-2" key={option.value}>
               <RadioGroupItem value={option.value} id={option.value} />
-              <Label htmlFor={option.value} className={codeStyle}>
+              <Label htmlFor={option.value} className={pageStyle.codeFont}>
                 {option.label}
               </Label>
             </div>

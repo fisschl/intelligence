@@ -1,0 +1,14 @@
+.output
+.nuxt
+node_modules
+.env
+.idea
+build
+.gitignore
+eslint.config.mjs
+.git
+.vscode
+Dockerfile
+.dockerignore
+README.md
+.next

@@ -1,5 +1,4 @@
 import type { NextConfig } from "next";
-import { createVanillaExtractPlugin } from "@vanilla-extract/next-plugin";
 
 const nextConfig: NextConfig = {
   async redirects() {
@@ -32,8 +31,7 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  output: "standalone",
 };
 
-const withVanillaExtract = createVanillaExtractPlugin();
-
-export default withVanillaExtract(nextConfig);
+export default nextConfig;
