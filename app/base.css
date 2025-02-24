@@ -1,0 +1,5 @@
+@layer reset, theme, base, tokens, components, recipes, utilities;
+
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
